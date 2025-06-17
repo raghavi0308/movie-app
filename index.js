@@ -4,7 +4,7 @@ let APIKey = "e333704d";
 
 const getData = async (movie) => {
   try {
-    let data = await fetch(`https://www.omdbapi.com/?apikey=${APIKey}&t=${encodeURIComponent(movie)}`);
+   let data = await fetch(`https://www.omdbapi.com/?apikey=${APIKey}&t=${encodeURIComponent(movie)}`);
     let jsonData = await data.json();
 
     if (jsonData.Response === "False") {

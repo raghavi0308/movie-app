@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const getData = async (movie) => {
   try {
-    let fetchData = await fetch(`http://www.omdbapi.com/?apikey=${APIKey}&t=${movie}`);
+    console.log("Searching for:", movie); // debug
+    let fetchData = await fetch(`https://www.omdbapi.com/?apikey=${APIKey}&t=${encodeURIComponent(movie)}`);
     let jsonData = await fetchData.json();
 
     if (jsonData.Response === "False") {
@@ -48,5 +49,12 @@ searchBtn.addEventListener("click", () => {
     getData(movieName);
   } else {
     document.querySelector(".card").innerHTML = "<h1>First Search Movie Name</h1>";
+  }
+});
+
+// Optional: Support pressing Enter
+searchInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    searchBtn.click();
   }
 });

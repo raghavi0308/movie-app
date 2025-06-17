@@ -124,3 +124,16 @@ nav{
         width: 90%;
     }
 }
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+.movieCard {
+  width: 300px;
+  flex-direction: column;
+}
+

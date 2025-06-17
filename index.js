@@ -1,6 +1,6 @@
 let searchInput = document.getElementById("searchInput");
 let searchBtn = document.getElementById("searchBtn");
-let APIKey = "17f8307a";
+let APIKey = "e333704d";
 
 const getData = async (movie) => {
     try{
